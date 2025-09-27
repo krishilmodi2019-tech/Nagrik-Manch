@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Welfare Petition App - Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .demo-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .launch-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 30px 0;
+            transition: transform 0.3s ease;
+        }
+        .launch-btn:hover {
+            transform: translateY(-2px);
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🏛️ Public Welfare Petition App</h1>
+        
+        <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">
+            A comprehensive platform for citizens to report local civic issues and create petitions for public welfare.
+        </p>
+
+        <a href="index.html" class="launch-btn">
+            🚀 Launch the App
+        </a>
+
+        <div class="instructions">
+            <h3>📋 How to Use the Demo</h3>
+            <ol>
+                <li><strong>Registration:</strong> Fill in your details including Aadhaar number (use any 12-digit number for demo)</li>
+                <li><strong>Login:</strong> Use your Aadhaar number and any 6-digit OTP (e.g., 123456)</li>
+                <li><strong>Create Petition:</strong> Report an issue with photo and location</li>
+                <li><strong>Browse Petitions:</strong> View local petitions and support them</li>
+                <li><strong>Search:</strong> Find petitions by ID or keywords</li>
+            </ol>
+        </div>
+
+        <div class="feature-list">
+            <div class="feature">
+                <h3>🔐 User Authentication</h3>
+                <p>Aadhaar-based registration and OTP verification system for secure user identification.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📱 Mobile Responsive</h3>
+                <p>Beautiful design that works perfectly on all devices with touch-friendly interface.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📸 Camera Integration</h3>
+                <p>Direct camera access to capture photos of issues with real-time preview.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🗺️ GPS Location</h3>
+                <p>Automatic location detection or manual entry for precise issue reporting.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📋 Petition Management</h3>
+                <p>Create, track, and manage petitions with unique IDs and status updates.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>👥 Community Support</h3>
+                <p>Support system where citizens can back petitions and track progress together.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>🔍 Search & Discovery</h3>
+                <p>Find petitions by ID or keywords, browse local issues in your area.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>📊 Status Tracking</h3>
+                <p>Real-time status updates: Pending, In Progress, and Resolved petitions.</p>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>🎯 Demo Features</h3>
+            <ul>
+                <li><strong>Sample Data:</strong> Pre-loaded with 3 sample petitions to demonstrate functionality</li>
+                <li><strong>Local Storage:</strong> Your data persists between sessions</li>
+                <li><strong>Simulated Verification:</strong> Aadhaar verification is simulated for demo purposes</li>
+                <li><strong>Responsive Design:</strong> Test on different screen sizes</li>
+                <li><strong>Camera Access:</strong> Works on mobile devices with camera permission</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; color: #666;">
+            <p><strong>Note:</strong> This is a frontend demo. In production, this would integrate with real backend services for Aadhaar verification, SMS OTP, and data persistence.</p>
+        </div>
+    </div>
+</body>
+</html>

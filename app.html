@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Welfare Petition App</title>
+    <title>Public Welfare Petition App - Fixed Version</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -342,6 +342,12 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Debug Panel (for testing) -->
+    <div style="position: fixed; top: 10px; right: 10px; z-index: 9999; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 5px; font-size: 12px;">
+        <button onclick="showDebugInfo()" style="background: #007bff; color: white; border: none; padding: 5px 10px; margin: 2px; border-radius: 3px; cursor: pointer;">Debug Info</button>
+        <button onclick="clearAllData()" style="background: #dc3545; color: white; border: none; padding: 5px 10px; margin: 2px; border-radius: 3px; cursor: pointer;">Clear Data</button>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
