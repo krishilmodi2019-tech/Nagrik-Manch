@@ -1,0 +1,37 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#0866d6;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,Arial,sans-serif}
+body{background:linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);padding:16px;color:#0f172a}
+.app{max-width:1000px;margin:0 auto;display:grid;gap:16px}
+header{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:48px;height:48px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+h1{font-size:1.05rem;margin:0}
+p.lead{margin:0;color:var(--muted);font-size:.92rem}
+.card{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.auth{display:grid;gap:12px}
+label{font-size:.86rem;color:var(--muted);margin-bottom:6px;display:block}
+input, textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef9;background:transparent;font-size:.96rem}
+button{cursor:pointer;border:0;background:var(--accent);color:white;padding:10px 12px;border-radius:10px;font-weight:600}
+.btn-ghost{background:transparent;border:1px solid #e6eef9;color:var(--accent)}
+.main-grid{display:grid;gap:12px}
+@media(min-width:880px){.main-grid{grid-template-columns:360px 1fr}}
+.petition{display:flex;gap:12px;align-items:flex-start;padding:10px;border:1px solid #eef4ff;border-radius:10px}
+.petition h3{margin:.1rem 0;font-size:1rem}
+.petition .meta{font-size:.82rem;color:var(--muted)}
+.status{padding:6px 8px;border-radius:999px;font-weight:700;font-size:.78rem}
+.status.open{background:#ecfdf5;color:#059669}
+.status.inprogress{background:#fef3c7;color:#b45309}
+.status.resolved{background:#d1fae5;color:#065f46}
+.small{font-size:.82rem}
+.right{margin-left:auto}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3f4f6;font-weight:600}
+.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:10px 4px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}
+.modal{background:var(--card);padding:18px;border-radius:12px;max-width:420px;width:100%}
+.show{display:flex}

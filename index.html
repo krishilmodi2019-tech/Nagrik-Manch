@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Public Welfare Petitions — Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">PW</div>
+        <div>
+          <h1>Public Welfare Petitions</h1>
+          <p class="lead">Report local civic issues, build petitions, track progress — stay heard.</p>
+        </div>
+      </div>
+      <div id="userPanel" class="muted small">Not signed in</div>
+    </header>
+
+    <!-- ---------- AUTH CARD ---------- -->
+    <section class="card auth" id="authCard">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <strong>Sign in with Aadhaar</strong>
+        <span class="muted small">Secure prototype</span>
+      </div>
+
+      <div class="group">
+        <label for="aadhaar">Aadhaar number</label>
+        <input id="aadhaar" type="text" inputmode="numeric" maxlength="12" placeholder="Enter 12-digit Aadhaar" />
+      </div>
+
+      <div class="group">
+        <label for="fullName">Full name (as on Aadhaar)</label>
+        <input id="fullName" type="text" placeholder="Your Name" />
+      </div>
+
+      <div class="row">
+        <button id="startVerify">Request OTP (simulate)</button>
+        <button id="continueGuest" class="btn-ghost">Continue as Guest</button>
+      </div>
+
+      <p class="muted small" style="margin-top:8px">
+        <strong>Security note:</strong> This prototype simulates Aadhaar OTP verification. Real Aadhaar eKYC/OTP must be done server-side using UIDAI APIs.
+      </p>
+    </section>
+
+    <!-- ---------- MAIN GRID: Left = controls, Right = petitions ---------- -->
+    <div class="main-grid">
+      <!-- Left column: Create petition & filters -->
+      <aside>
+        <div class="card">
+          <strong>Create a petition</strong>
+          <p class="muted small">Describe the issue and assign a location. Build support by sharing.</p>
+
+          <form id="petitionForm">
+            <div class="group">
+              <label for="title">Title</label>
+              <input id="title" type="text" required placeholder="e.g., Broken streetlight on MG Road" />
+            </div>
+            <div class="group">
+              <label for="category">Category</label>
+              <select id="category">
+                <option>Pothole/Road</option>
+                <option>Streetlight</option>
+                <option>Garbage</option>
+                <option>Public Transport</option>
+                <option>Water/Sewerage</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="group">
+              <label for="location">Location (landmark/area)</label>
+              <input id="location" type="text" placeholder="Enter locality or landmark" />
+            </div>
+            <div class="group">
+              <label for="description">Description</label>
+              <textarea id="description" placeholder="What happened? When? Why urgent?"></textarea>
+            </div>
+
+            <div style="display:flex;gap:8px">
+              <button type="submit">Create petition</button>
+              <button type="button" class="btn-ghost" id="clearForm">Clear</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Filter & view</strong>
+          <div style="margin-top:8px">
+            <label for="filterCategory">Category</label>
+            <select id="filterCategory">
+              <option value="">All</option>
+              <option>Pothole/Road</option>
+              <option>Streetlight</option>
+              <option>Garbage</option>
+              <option>Public Transport</option>
+              <option>Water/Sewerage</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <button id="applyFilter" class="btn-ghost">Apply</button>
+            <button id="resetFilter" class="btn-ghost">Reset</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right column: petitions -->
+      <main>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <strong>Active petitions</strong>
+            <div class="pill right" id="totalCount">0</div>
+          </div>
+          <div id="petitionList" style="display:grid;gap:10px"></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Track petition</strong>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input id="trackId" type="text" placeholder="Enter petition ID (e.g., P-1234)" />
+            <button id="trackBtn" class="btn-ghost">Track</button>
+          </div>
+          <div id="trackResult" style="margin-top:10px" class="muted small"></div>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer card">Prototype — not a production system. Follow privacy & UIDAI rules for real Aadhaar use.</div>
+  </div>
+
+  <!-- Modal: OTP (simulated) -->
+  <div id="otpModal" class="modal-backdrop">
+    <div class="modal">
+      <strong>Enter OTP</strong>
+      <p class="muted small">We sent a 6-digit OTP to the mobile linked with Aadhaar (simulation).</p>
+      <div style="margin-top:8px">
+        <input id="otpInput" maxlength="6" placeholder="123456" />
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button id="confirmOtp">Confirm</button>
+        <button id="cancelOtp" class="btn-ghost">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
